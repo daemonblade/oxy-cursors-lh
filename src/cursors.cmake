@@ -8,8 +8,8 @@ macro(add_cursor cursor color theme dpi)
                       )
     add_custom_command(OUTPUT ${CMAKE_BINARY_DIR}/oxy-${theme}/png/${cursor}.png
                        DEPENDS ${CMAKE_BINARY_DIR}/oxy-${theme}/svg/${cursor}.svg
-                       COMMAND ${INKSCAPE} --without-gui --export-dpi=${dpi}
-                                           --export-png=${CMAKE_BINARY_DIR}/oxy-${theme}/png/${cursor}.png
+                       COMMAND ${INKSCAPE} --export-dpi=${dpi}
+                                           --export-filename=${CMAKE_BINARY_DIR}/oxy-${theme}/png/${cursor}.png
                                            ${CMAKE_BINARY_DIR}/oxy-${theme}/svg/${cursor}.svg
                       )
 endmacro(add_cursor)
